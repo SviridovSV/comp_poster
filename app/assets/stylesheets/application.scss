@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'bootstrap/theme';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('https://lh3.googleusercontent.com/-vNduOcGjECU/Vb6M7hbiNeI/AAAAAAAARl0/IzkOkVC-MnY/s800-Ic42/_DSC2478.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
