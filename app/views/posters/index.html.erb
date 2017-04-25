@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <%= render 'form' %>
+<% end %>
+<% if @posters %>
+  <% @posters.each do |poster| %>
+    <%= render 'poster', poster: poster %>
+  <% end %>
+<% end %>
+

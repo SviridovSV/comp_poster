@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posters, dependent: :destroy
 
   class << self
     def from_omniauth(auth_hash)

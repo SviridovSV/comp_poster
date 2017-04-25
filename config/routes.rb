@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'pages#index'
+  root 'sessions#new'
 
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  resources :posters, only: [:index, :create, :destroy] do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
