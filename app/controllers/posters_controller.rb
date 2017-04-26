@@ -1,4 +1,5 @@
 class PostersController < ApplicationController
+  before_filter :authenticated_user_only, except: :index
 
   def index
     @posters = Poster.all

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :find_commentable
+  before_filter :authenticated_user_only
+  before_filter :find_commentable
 
   def new
     @comment = Comment.new
@@ -13,7 +14,7 @@ class CommentsController < ApplicationController
     else
       flash.now[:error] = "Your comment wasn't posted!"
     end
-      redirect_to :back
+      redirect_to posters_path
   end
 
 

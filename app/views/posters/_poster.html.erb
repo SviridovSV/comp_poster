@@ -1,2 +1,11 @@
-<%= poster.created_at.strftime("Created on %m/%d/%Y") %>
-<%= poster.content %>
+<div>
+  <%= poster.content %>
+  <%= link_to '<i class="glyphicon glyphicon-comment"></i>'.html_safe, new_comment_path(poster_id: "#{poster.id}") %>
+  <% if poster.comments %>
+    <% poster.comments.each do |comment| %>
+      <ul>
+        <%= render'comments/comment', comment: comment %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

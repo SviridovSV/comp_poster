@@ -1,0 +1,13 @@
+<li>
+  <div>
+    <%= comment.body %>
+    <%= link_to '<i class="glyphicon glyphicon-comment"></i>'.html_safe, new_comment_path(comment_id: "#{comment.id}") %>
+    <% if comment.comments %>
+      <% comment.comments.each do |comment| %>
+        <ul>
+            <%= render 'comments/comment', comment: comment %>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</li>
