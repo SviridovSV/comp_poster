@@ -26,7 +26,7 @@ body {
   background-image: url('https://lh3.googleusercontent.com/-vNduOcGjECU/Vb6M7hbiNeI/AAAAAAAARl0/IzkOkVC-MnY/s800-Ic42/_DSC2478.jpg');
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center;
+  background-position: right;
 }
 
 html {
@@ -42,3 +42,16 @@ h1 {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
+ul {
+  list-style: none;
+}
+
+.list-group {
+  background: none;
+  .list-group-item {
+    background: none;
+    border: none;
+  }
+}
+

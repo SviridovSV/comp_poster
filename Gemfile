@@ -4,6 +4,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails'
+gem 'will_paginate'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,11 +1,17 @@
-<% if current_user %>
-  <%= render 'form' %>
-<% else %>
-  <%= link_to image_tag("http://www.iconsearch.ru/uploads/icons/metallic/128x128/facebook_01.png"), '/auth/facebook' %>
-<% end %>
-<% if @posters %>
-  <% @posters.default_order.each do |poster| %>
-    <%= render 'poster', poster: poster %>
+<div class="container-fluid"
+  <% if current_user %>
+    <%= render 'form' %>
+  <% else %>
+    <div class="row">
+      <%= link_to image_tag("http://s1.iconbird.com/ico/0512/Socialis/file1337168437.png"), '/auth/facebook', class: "col-md-1 col-md-offset-3" %>
+      <h4 class="col-md-4">Для добавления и комментирования сообщений выполните вход</h4>
+    </div>
   <% end %>
-<% end %>
+  <% if @posters %>
+    <% @posters.default_order.each do |poster| %>
+      <%= render 'poster', poster: poster %>
+    <% end %>
+    <%= will_paginate @posters %>
+  <% end %>
+</div>
 

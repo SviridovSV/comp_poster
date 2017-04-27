@@ -3,5 +3,5 @@ class Poster < ActiveRecord::Base
   has_many :comments, as: :commentable
   scope :default_order, -> { order('created_at DESC') }
   validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true
 end

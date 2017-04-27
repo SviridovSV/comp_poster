@@ -1,13 +1,17 @@
-<li>
+
   <div>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <small><%= time_ago_in_words(comment.created_at) %> ago</small>
     <%= comment.body %>
     <%= link_to '<i class="glyphicon glyphicon-comment"></i>'.html_safe, new_comment_path(comment_id: "#{comment.id}") %>
     <% if comment.comments %>
       <% comment.comments.each do |comment| %>
-        <ul>
+        <ul class="list-group">
+          <li class="list-group-item">
             <%= render 'comments/comment', comment: comment %>
+          </li>
         </ul>
       <% end %>
     <% end %>
   </div>
-</li>
+

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_filter :not_authenticated_user_only,except: :destroy
 
   def new
   end

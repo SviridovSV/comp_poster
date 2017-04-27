@@ -2,17 +2,17 @@ class PostersController < ApplicationController
   before_filter :authenticated_user_only, except: :index
 
   def index
-    @posters = Poster.all
+    @posters = Poster.default_order.paginate(page: params[:page], per_page: 8)
   end
 
   def create
     @poster = current_user.posters.build(poster_params)
     if @poster.save
-      flash.now[:success] = "Post created"
+      flash[:success] = "Post created"
     else
-      flash.now[:error] = "Something wrong"
+      flash[:warning] = "Something wrong"
     end
-    render 'index'
+    redirect_to posters_path
   end
 
   private

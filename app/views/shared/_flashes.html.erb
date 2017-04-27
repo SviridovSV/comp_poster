@@ -1,0 +1,4 @@
+<% flash.each do |key, message| %>
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  <p class="alert alert-<%= key %> alert-dismissable"><%= message %></p>
+<% end %>

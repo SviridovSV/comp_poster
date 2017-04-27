@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new comment_params
 
     if @comment.save
-      flash.now[:success] = "Comment created"
+      flash[:success] = "Comment created"
     else
-      flash.now[:error] = "Your comment wasn't posted!"
+      flash[:warning] = "Your comment wasn't posted!"
     end
       redirect_to posters_path
   end

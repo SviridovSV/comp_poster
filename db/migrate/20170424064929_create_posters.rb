@@ -1,7 +1,7 @@
 class CreatePosters < ActiveRecord::Migration
   def change
     create_table :posters do |t|
-      t.string :content
+      t.text :content
       t.integer :user_id
 
       t.timestamps null: false

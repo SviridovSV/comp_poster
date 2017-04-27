@@ -1,10 +1,18 @@
 <div>
-  <%= poster.content %>
+  <% if poster.comments.any? %>
+    <span class="glyphicon glyphicon-hand-down"></span>
+  <% else %>
+    <span class="glyphicon glyphicon-hand-right"></span>
+  <% end %>
+  <small><%= time_ago_in_words(poster.created_at) %> ago</small>
+  <span class="lead"><%= poster.content %></span>
   <%= link_to '<i class="glyphicon glyphicon-comment"></i>'.html_safe, new_comment_path(poster_id: "#{poster.id}") %>
   <% if poster.comments %>
-    <% poster.comments.each do |comment| %>
-      <ul>
-        <%= render'comments/comment', comment: comment %>
+    <% poster.comments.comment_order.each do |comment| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= render'comments/comment', comment: comment %>
+        </li>
       </ul>
     <% end %>
   <% end %>
